@@ -25,6 +25,6 @@ COPY ./default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 
 RUN a2enmod ssl
 RUN a2ensite default-ssl.conf
-
+ENV DB_HOST="db"
 RUN apt clean 
 ENTRYPOINT ["apache2ctl", "-D", "FOREGROUND"]
